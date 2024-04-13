@@ -24,4 +24,8 @@ Upgraded dependencies to latest version
 
 ## 0.0.7
 
- Add method `retriveToken()` to get the saved token
+Add method `retriveToken()` to get the saved token
+
+## 0.0.8
+
+Add method `deleteToken()` to get the saved token

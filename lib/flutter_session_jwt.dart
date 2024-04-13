@@ -32,6 +32,9 @@ class FlutterSessionJwt {
   //To get jwt token from storage
   static _getJwtToken() async => await _storage.read(key: _keyJwtToken);
 
+  //  Remove jwt token entry from secure storage
+  static _removeJwtToken() async => await _storage.delete(key: _keyJwtToken);
+
   /// Retrieve token from storage
   ///
   /// Returns token as ```String``` if token is saved in storage
@@ -39,6 +42,12 @@ class FlutterSessionJwt {
   ///```Note:```
   ///Make sure to save token using ```FlutterSessionJwt.saveToken("token here")``` method before using other methods
   static Future<String?> retrieveToken() async => await _getJwtToken();
+
+  /// Delete token from storage
+  ///
+  ///```Note:```
+  ///Make sure to save token using ```FlutterSessionJwt.saveToken("token here")``` method before using other methods
+  static Future<void> deleteToken() async => await _removeJwtToken();
 
   ///Get payload from jwt token
   ///
